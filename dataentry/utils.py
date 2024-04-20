@@ -56,12 +56,6 @@ def generate_csv_file(model_name):
     #define the csv file name/path
     export_dir='exported_data'
     file_name=f'exported_{model_name}_data_{timestamp}.csv'
-    directory_path = os.path.join(settings.MEDIA_ROOT, export_dir)
-    
-    # Ensure that the directory exists, create if it doesn't
-    if not os.path.exists(directory_path):
-        os.makedirs(directory_path)
-    
-    file_path = os.path.join(directory_path, file_name)
-    print('File Path:', file_path)
+    file_path=os.path.join(settings.MEDIA_ROOT,export_dir,file_name)
+    print('f=====>',file_path)
     return file_path
